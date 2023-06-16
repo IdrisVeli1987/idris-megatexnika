@@ -3,6 +3,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import MegaTexnikaLogo from "../../assets/logo.png";
+import { NavLink } from "react-router-dom";
 export const Header = () => {
   return (
     <>
@@ -32,6 +33,12 @@ export const Header = () => {
             style={{ objectFit: "contain" }}
           />
           <Stack flexDirection="row" gap={1}>
+            <NavLink to='#' title='Əsas səhifə'/>
+            <NavLink to='/about' title='Haqqımızda'/>
+            <NavLink to='/texnikalar' title='Texnikalar'/>
+            <NavLink to='/icare' title='İcarə şərtləri'/>
+            <NavLink to='/blog' title='Blog'/>
+            <NavLink to='/elaqe' title='Əlaqə'/>
             <Typography component='a' href='#'>Əsas səhifə</Typography>
             <Typography component='a' href='#'>Haqqımızda</Typography>
             <Typography component='a' href='#'>Texnikalar</Typography>
