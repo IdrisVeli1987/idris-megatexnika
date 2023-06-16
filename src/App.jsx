@@ -1,10 +1,11 @@
-function App() {
+import { PageContainer } from "./components/PageContainer";
 
+function App() {
   return (
-    <>
-     <h1>Mega Texnika</h1>
-    </>
-  )
+    <PageContainer>
+      <h1>Mega Texnika</h1>
+    </PageContainer>
+  );
 }
 
-export default App
+export default App;
