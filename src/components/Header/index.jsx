@@ -3,11 +3,25 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import MegaTexnikaLogo from "../../assets/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "../NavLink";
+
+const texnikalarLinks = [
+  {
+    id: 0,
+    to: "/texnikalar/eskavator",
+    title: "Eskavator",
+  },
+  {
+    id: 1,
+    to: "/texnikalar/forklift",
+    title: "Forklift",
+  },
+];
+
 export const Header = () => {
   return (
     <>
-      <Box sx={{ backgroundColor: "#rgba(255, 192, 31, 1)", py: 2 }}>
+      <Box sx={{ backgroundColor: "rgba(255, 192, 31, 1)", py: 2 }}>
         <Container>
           <Stack flexDirection="row" justifyContent="space-between">
             <Typography>
@@ -32,21 +46,23 @@ export const Header = () => {
             alt="MegaTexnikaLogo"
             style={{ objectFit: "contain" }}
           />
-          <Stack flexDirection="row" gap={1}>
-            <NavLink to='#' title='Əsas səhifə'/>
-            <NavLink to='/about' title='Haqqımızda'/>
-            <NavLink to='/texnikalar' title='Texnikalar'/>
-            <NavLink to='/icare' title='İcarə şərtləri'/>
-            <NavLink to='/blog' title='Blog'/>
-            <NavLink to='/elaqe' title='Əlaqə'/>
-            <Typography component='a' href='#'>Əsas səhifə</Typography>
-            <Typography component='a' href='#'>Haqqımızda</Typography>
-            <Typography component='a' href='#'>Texnikalar</Typography>
-            <Typography component='a' href='#'>İcarə şərtləri</Typography>
-            <Typography component='a' href='#'>Blog</Typography>
-            <Typography component='a' href='#'>Əlaqə</Typography>
+          <Stack
+            sx={{ display: { xs: "none", md: "flex" } }}
+            flexDirection="row"
+            gap={1}
+          >
+            <NavLink to="/" title="Əsas səhifə" />
+            <NavLink to="/about" title="Haqqımızda" />
+            <NavLink
+              to="/texnikalar"
+              title="Texnikalar"
+              links={texnikalarLinks}
+            />
+            <NavLink to="/icare" title="İcarə şərtləri" />
+            <NavLink to="/blog" title="Blog" />
+            <NavLink to="/elaqe" title="Əlaqə" />
           </Stack>
-          <Stack flexDirection="row" gap={1}>
+          <Stack sx={{ display: { xs: 'none', md: 'flex' } }} flexDirection="row" gap={1}>
             <Typography>AZ</Typography>
             <Typography>EN</Typography>
             <Typography>RU</Typography>
