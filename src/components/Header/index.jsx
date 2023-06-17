@@ -4,6 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import MegaTexnikaLogo from "../../assets/logo.png";
 import { NavLink } from "../NavLink";
+import { BurgerMenu } from "../burgerMenu";
 
 const texnikalarLinks = [
   {
@@ -67,6 +68,7 @@ export const Header = () => {
             <Typography>EN</Typography>
             <Typography>RU</Typography>
           </Stack>
+          <BurgerMenu />
         </Stack>
       </Container>
     </>
