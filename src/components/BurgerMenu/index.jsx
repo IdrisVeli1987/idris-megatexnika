@@ -38,7 +38,7 @@ export const BurgerMenu = () => {
           {open ? <Close /> : <MenuIcon />}
         </IconButton>
         <Dialog fullScreen open={open} onClose={() => setOpen(false)}>
-          <Box p={4}>
+          <Box p={4} height="calc(100% - 50px)">
             <Stack flexDirection="row" justifyContent="flex-end">
               <IconButton
                 edge="end"
@@ -48,17 +48,24 @@ export const BurgerMenu = () => {
                 <Close />
               </IconButton>
             </Stack>
-            <Stack gap={5} sx={{fontSize: "1.5rem"}}>
-              <NavLink to="/" title="Əsas səhifə" />
-              <NavLink to="/about" title="Haqqımızda" />
-              <NavLink
-                to="/texnikalar"
-                title="Texnikalar"
-                links={texnikalarLinks}
-              />
-              <NavLink to="/icare" title="İcarə şərtləri" />
-              <NavLink to="/blog" title="Blog" />
-              <NavLink to="/elaqe" title="Əlaqə" />
+            <Stack height="100%" justifyContent="space-between">
+              <Stack gap={5} sx={{ fontSize: "1.5rem" }}>
+                <NavLink to="/" title="Əsas səhifə" />
+                <NavLink to="/about" title="Haqqımızda" />
+                <NavLink
+                  to="/texnikalar"
+                  title="Texnikalar"
+                  links={texnikalarLinks}
+                />
+                <NavLink to="/icare" title="İcarə şərtləri" />
+                <NavLink to="/blog" title="Blog" />
+                <NavLink to="/elaqe" title="Əlaqə" />
+              </Stack>
+              <Stack flexDirection="row" justifyContent="center" gap={1} >
+                <Typography>AZ</Typography>
+                <Typography>EN</Typography>
+                <Typography>RU</Typography>
+              </Stack>
             </Stack>
           </Box>
         </Dialog>
