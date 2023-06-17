@@ -1,22 +1,24 @@
-import { NavLink as RRD_NavLink } from "react-router-dom";
+import { NavLink as RRD_NavLink, useNavigate } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Transform } from "@mui/icons-material";
 import { useState } from "react";
-import { Typography } from "@mui/material";
+import { Menu, MenuItem } from "@mui/material";
 
 export const NavLink = ({ to, title, links }) => {
   const [hover, setHover] = useState(false);
+  const [anchorElem, setAnchorElem] = useState(null);
+  const navigate = useNavigate()
   return (
     <>
       <RRD_NavLink
         to={to}
         style={({ isActive }) => {
           return {
-            color: isActive ? "rgba(255, 192, 31, 1)" : "black", fontSize: '1rem', transform:"translate(0, 3px)"
+            color: isActive ? "rgba(255, 192, 31, 1)" : "black",
           };
         }}
-        onMouseEnter={() => {
+        onMouseEnter={(e) => {
           setHover(true);
+          setAnchorElem(e.target);
         }}
         onMouseLeave={() => {
           setHover(false);
@@ -32,7 +34,21 @@ export const NavLink = ({ to, title, links }) => {
             }}
           />
         )}
-        {Array.isArray(links) && hover && <Typography>Salam</Typography>}
+        {Array.isArray(links) && hover && (
+          <Menu
+            open={true}
+            onClose={() => setHover(false)}
+            anchorEl={anchorElem}
+          >
+            {links.map((link) => {
+              return (
+                <MenuItem  key={link.id} onClick={() => navigate(link.to)}>
+                  {link.title}
+                </MenuItem>
+              );
+            })}
+          </Menu>
+        )}
       </RRD_NavLink>
     </>
   );
