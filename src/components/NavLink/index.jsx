@@ -29,7 +29,7 @@ export const NavLink = ({ to, title, links }) => {
           <ExpandMoreIcon
             sx={{
               color: "rgba(255, 192, 31, 1)",
-              fonstSize: "1rem",
+              fontSize: "1rem",
               transform: "translate(0, 3px)",
             }}
           />
