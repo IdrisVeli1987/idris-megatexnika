@@ -54,7 +54,7 @@ export const Footer = ({}) => {
             <Stack flexDirection={{xs:"column", sm:"row"}} alignItems="center" justifyContent="space-between">
               <Typography>© 2022 Megatexnika / Müəllif hüquqları</Typography>
               <Typography>Design by <b>JEDAİ</b></Typography>
-            </Stack>
+            </Stack> 
           </Grid>
         </Grid>
       </Container>
