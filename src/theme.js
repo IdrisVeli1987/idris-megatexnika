@@ -17,6 +17,7 @@ export const theme = createTheme({
           textTransform: "capitalize",
           color: "black",
           borderColor: "black",
+          minWidth: 150,
           "&:hover": {
             backgroundColor: "rgba(255, 192, 31, 1)",
           },
