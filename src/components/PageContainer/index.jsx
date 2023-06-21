@@ -6,7 +6,9 @@ export const PageContainer = ({ children }) => {
   return (
     <>
       <Header />
-      <Box component="main">{children}</Box>
+      <Box component="main" sx={{ my: 5 }}>
+        {children}
+      </Box>
       <Footer />
     </>
   );
