@@ -77,7 +77,6 @@ export const Home = () => {
               type and scrambled
             </Typography>
             <Button variant="outlined">Ətraflı</Button>
-            <Button variant="outlined">Haqqımızda</Button>
           </Grid>
           <Grid item xs={12} md={6}>
             <PaperImg src={Ekskavator} />

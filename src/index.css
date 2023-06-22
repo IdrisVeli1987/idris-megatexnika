@@ -20,3 +20,9 @@ a {
   z-index: -1;
   background-image: url(assets/radiueses.png);
 }
+
+.icare_img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
