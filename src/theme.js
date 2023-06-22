@@ -7,6 +7,16 @@ export const theme = createTheme({
     },
   },
   components: {
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          border: "none",
+          margin: "5px",
+          padding: "5px",
+          color: "rgba(53, 53, 53, 1)"
+        },
+      },
+    },
     MuiButton: {
       defaultProps: {
         disableRipple: true,
